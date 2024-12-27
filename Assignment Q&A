@@ -1,0 +1,53 @@
+
+2. Please describe what additional testing could be done on this type of journey.
+
+* Verify that registration works correctly with valid data for different user types.
+* Test error handling for invalid data, missing fields, and edge cases.
+*  Ensure smooth navigation through the entire registration process.
+* Test email or phone number confirmation mechanisms.
+
+
+3. Please write all possible scenarios for OTP
+
+* OTP generated and delivered successfully to the specified channel (SMS, email, etc.).
+* User receives the OTP within the expected timeframe.
+* User enters the OTP correctly and is successfully registered.
+* OTP remains valid for the expected duration.
+* OTP usage is limited to one successful registration per user
+* User enters incorrect contact information (invalid phone number, typo in email address).
+* OTP delivery fails due to technical issues (network outage, server error).
+* User does not receive the OTP within the expected timeframe.
+* User enters an incorrect OTP (typo, wrong characters).
+* User exceeds the maximum number of allowed OTP attempts.
+* User attempts to register with an already used OTP.
+
+
+4. Please describe how this test could fit into a CI pipeline. 
+
+Integrating registration test automation into your CI pipeline offers several benefits, including faster feedback, improved code quality, and reduced manual testing effort. Below are few point which can be benefited by doing it.
+
+1. After a developer pushes code changes, the CI pipeline triggers automated builds and tests. Registration tests should be part of this initial stage to catch early regressions.
+2. The pipeline builds the application and runs automated tests, including registration tests. These tests should have high coverage and verify core functionalities like:
+    * Valid user registration with different data combinations.
+    * Error handling for invalid inputs and missing fields.
+    * OTP validation and delivery (if applicable).
+    * Account verification and activation.
+3. The pipeline analyzes test results, reporting successes and failures. This provides developers with immediate feedback on potential issues introduced in their changes. Based on test results and other criteria, the pipeline might trigger deployment to testing or production environments. If registration tests fail, the deployment might be blocked until the issues are fixed.
+Benefits:
+* Fast Feedback: Developers receive immediate feedback on registration functionality, enabling quick bug fixes and improved code quality.
+* Reduced Manual Testing: Automation frees up testers for more exploratory and edge-case testing.
+* Continuous Integration: Tightly coupled code changes and testing promote early detection and resolution of issues.
+* Improved Code Quality: Regular regression testing ensures a stable and reliable registration process.
+
+
+5. What tools would you use/recommend to perform visual testing of such a journey?
+
+Selenium itself primarily focuses on functional testing, not visual testing. Still, you can combine Selenium with various tools to perform visual regression testing during our registration journey.
+
+Applitools Eyes: 
+This tool integrates seamlessly with Selenium and provides comprehensive visual testing capabilities. It captures screenshots at different steps of the registration process and compares them to baselines, highlighting any visual discrepancies. It also offers AI-powered analysis and features like visual diffs, failure insights, and root cause analysis.
+
+SikuliX: 
+This is free and open-source tool uses image recognition to automate visual testing. While not as feature-rich as Applitools or Wraith, it can be helpful for simple comparisons and works across different platforms.
+
+By incorporating visual testing with these tool, you can ensure that our registration journey not only functions correctly but also maintains a consistent and visually appealing user experience.
