@@ -8,7 +8,7 @@ public class Homepage {
 		String s = "admin";
 		System.out.println("variable"+s);
 		System.out.println("updating in git");
-
+		System.out.println("valu");
 	}
 
 }
