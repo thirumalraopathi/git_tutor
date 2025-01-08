@@ -6,6 +6,8 @@ public class RegTest {
 		// TODO Auto-generated method stub
 		
 		System.out.println("registration test");
+		
+		System.out.println("registration test feature");
 
 	}
 
